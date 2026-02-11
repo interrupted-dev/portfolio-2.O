@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aman | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<!-- Icons -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<main class="container">
+
+  <!-- PROFILE -->
+  <section class="profile">
+
+    <div class="profile-top">
+      <!-- <img src="assets/profile.jpg" class="avatar"> -->
+      <div>
+        <h1>Hi, I’m Aman</h1>
+        <p class="role">Machine Learning Student</p>
+        <p class="meta">Open to internships · India</p>
+
+        <div class="links">
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <button id="theme-toggle" class="theme-toggle floating-toggle">🌙</button>
+
+      </div>
+    </div>
+
+    <div class="block">
+      <h3>About</h3>
+      <p>I enjoy transforming messy data into meaningful insights using machine learning and visualization.</p>
+    </div>
+
+    <div class="block">
+      <h3>Skills</h3>
+      <div class="tags">
+        <span>Python</span>
+        <span>Machine Learning</span>
+        <span>NLP</span>
+        <span>SQL</span>
+        <span>Visualization</span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+
+      <a href="./project-page.html" class="project-card">
+        <img src="../assets/project1.jpg">
+        <div class="project-body">
+          <div class="project-header">
+            <h3>Music Visualization</h3>
+            <span>↗</span>
+          </div>
+          <div class="tags">
+            <span>Python</span>
+            <span>Visualization</span>
+          </div>
+          <p class="desc">Analyzed listening trends using dashboards.</p>
+          <p class="impact">↑ Insights into listening behaviour</p>
+        </div>
+      </a>
+
+      <a href="./project-page.html" class="project-card">
+        <img src="../assets/project1.jpg">
+        <div class="project-body">
+          <div class="project-header">
+            <h3>Recommendation Engine</h3>
+            <span>↗</span>
+          </div>
+          <div class="tags">
+            <span>ML</span>
+            <span>Clustering</span>
+          </div>
+          <p class="desc">Built smart personalized suggestions.</p>
+          <p class="impact">↑ Improved prediction accuracy</p>
+        </div>
+      </a>
+
+      <a href="./project-page.html" class="project-card">
+        <img src="../assets/project1.jpg">
+        <div class="project-body">
+          <div class="project-header">
+            <h3>Recommendation Engine</h3>
+            <span>↗</span>
+          </div>
+          <div class="tags">
+            <span>ML</span>
+            <span>Clustering</span>
+          </div>
+          <p class="desc">Built smart personalized suggestions.</p>
+          <p class="impact">↑ Improved prediction accuracy</p>
+        </div>
+      </a>
+
+
+      <a href="./project-page.html" class="project-card">
+        <img src="../assets/project1.jpg">
+        <div class="project-body">
+          <div class="project-header">
+            <h3>Recommendation Engine</h3>
+            <span>↗</span>
+          </div>
+          <div class="tags">
+            <span>ML</span>
+            <span>Clustering</span>
+          </div>
+          <p class="desc">Built smart personalized suggestions.</p>
+          <p class="impact">↑ Improved prediction accuracy</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="experience">
+    <h2>Experience</h2>
+    <div class="card">
+      <h4>Intern — Data Analyst</h4>
+      <p>Company Name · Summer 2025</p>
+      <p>Worked on dashboards and analytics pipelines.</p>
+    </div>  
+
+    <br>
+
+    <div class="card">
+      <h4>Intern — Data Analyst</h4>
+      <p>Company Name · Summer 2025</p>
+      <p>Worked on dashboards and analytics pipelines.</p>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="education">
+    <h2>Education</h2>
+    <div class="card">
+      <h4>Your University</h4>
+      <p>B.Tech Computer Science · 2022–2026</p>
+      <br>
+      <h4>PGP in Data Science</h4>
+      <p>IBM DATA SCIENCE</p>
+    </div>
+  </section>
+
+  <footer class="footer-note">
+    Code, data, and a bit of frontend magic
+  </footer>
+
+</main>
+
+<!-- ANIMATION + DARK MODE SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Fade-in animation
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add("visible");
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll("section, .project-card, .card, .content-card")
+    .forEach(el => {
+      el.classList.add("fade-in");
+      observer.observe(el);
+    });
+
+  // Dark mode toggle
+  const toggleBtn = document.getElementById("theme-toggle");
+
+  function setTheme(mode) {
+    if (mode === "dark") {
+      document.body.classList.add("dark");
+      toggleBtn.textContent = "☀️";
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.body.classList.remove("dark");
+      toggleBtn.textContent = "🌙";
+      localStorage.setItem("theme", "light");
+    }
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    const isDark = document.body.classList.contains("dark");
+    setTheme(isDark ? "light" : "dark");
+  });
+
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) setTheme(savedTheme);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music Visualization Project</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<!-- Icons -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<main class="container project-page">
+
+  <!-- BACK -->
+  <a href="index.html" class="back-link">← Back to portfolio</a>
+
+  <!-- TITLE -->
+  <h1 class="project-title">Music Visualization Dashboard</h1>
+
+  <!-- HERO IMAGE -->
+  <div class="project-hero">
+    <img src="../assets/project1.jpg" alt="Project banner">
+  </div>
+
+  <!-- META CARD -->
+  <section class="project-meta-card">
+    <div>
+      <h3>Links</h3>
+      <div class="project-links">
+        <a href="#">Live Demo ↗</a>
+        <a href="#">GitHub ↗</a>
+      </div>
+    </div>
+
+    <div>
+      <h3>Skills</h3>
+      <div class="tags">
+        <span>Python</span>
+        <span>Pandas</span>
+        <span>Data Visualization</span>
+        <span>Dash</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT CARDS -->
+  <section class="content-card">
+    <h3>Overview</h3>
+    <p>This project explores music listening behaviour through interactive dashboards. It transforms raw listening datasets into visual insights that highlight trends, patterns, and engagement metrics.</p>
+  </section>
+
+  <section class="content-card">
+    <h3>What I Built</h3>
+    <ul>
+      <li>Interactive dashboard with filtering tools</li>
+      <li>Data cleaning and preprocessing pipeline</li>
+      <li>Trend analysis visualizations</li>
+      <li>User-friendly insight presentation</li>
+    </ul>
+  </section>
+
+  <section class="content-card">
+    <h3>Impact</h3>
+    <p>The system revealed meaningful listening patterns that help understand user engagement and preference shifts. These insights can guide recommendation improvements and strategic decision-making.</p>
+  </section>
+
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Fade-in animation
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add("visible");
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll("section, .project-card, .card, .content-card")
+    .forEach(el => {
+      el.classList.add("fade-in");
+      observer.observe(el);
+    });
+
+  // Dark mode toggle is shared from index.html if you include button here
+});
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Fade-in animation
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.15 });
+  
+    document.querySelectorAll("section, .project-card, .card, .content-card")
+      .forEach(el => {
+        el.classList.add("fade-in");
+        observer.observe(el);
+      });
+  
+    // APPLY DARK MODE IF SAVED
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark");
+    }
+  });
+  </script>
+  
+
+</body>
+</html>
